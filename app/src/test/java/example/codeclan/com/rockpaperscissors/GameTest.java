@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertNotNull;
 
 /**
  * Created by user on 19/04/2017.
@@ -40,5 +41,11 @@ public class GameTest {
         player.playerChoice("Rock");
         computer.computerChoice("Paper");
         assertEquals("Computer wins!", game.play());
+    }
+
+    @Test
+    public void testRandomComputerChoice(){
+        assertNotNull(computer.getRandomComputerChoice());
+
     }
 }
