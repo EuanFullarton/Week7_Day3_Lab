@@ -46,6 +46,6 @@ public class GameTest {
     @Test
     public void testRandomComputerChoice(){
         assertNotNull(computer.getRandomComputerChoice());
-
     }
+
 }
