@@ -6,35 +6,37 @@ package example.codeclan.com.rockpaperscissors;
 
 public class Game {
 
+    Player player;
+    Computer computer;
+    private String choice;
+
+    public Game(Player player, Computer computer) {
+        this.player = player;
+        this.computer = computer;
+    }
 
     public String play() {
+        if (player.getPlayerChoice() == computer.getComputerChoice()) {
+            return "Draw!";
+        }
+
+        if (player.getPlayerChoice() == "Rock" && computer.getComputerChoice() == "Scissors") {
+            return "Player wins!";
+        } else if (player.getPlayerChoice() == "Rock" && computer.getComputerChoice() == "Paper") {
+            return "Computer wins!";
+        } else if (player.getPlayerChoice() == "Paper" && computer.getComputerChoice() == "Scissors") {
+            return "Computer wins!";
+        } else if (player.getPlayerChoice() == "Paper" && computer.getComputerChoice() == "Rock") {
+            return "Player wins!";
+        } else if (player.getPlayerChoice() == "Scissors" && computer.getComputerChoice() == "Paper") {
+            return "Player wins!";
+        } else if (player.getPlayerChoice() == "Scissors" && computer.getComputerChoice() == "Rock") {
+            return "Computer wins!";
+        } else {
+            return "Please make a choice!";
+        }
     }
+
+
 }
 
-
-
-//
-//    def self.check_win(hand1, hand2)
-//        hand1 = hand1.downcase
-//        hand2 = hand2.downcase
-//
-//        if hand1 == hand2
-//        return "Draw!"
-//        end
-//
-//        if hand1 == "rock" && hand2 == "scissors"
-//        return "Rock wins!"
-//        elsif hand1 == "rock" && hand2 == "paper"
-//        return "Paper wins!"
-//        elsif hand1 == "paper" && hand2 == "scissors"
-//        return "Scissors wins!"
-//        elsif hand1 == "paper" && hand2 == "rock"
-//        return "Paper wins!"
-//        elsif hand1 == "scissors" && hand2 == "paper"
-//        return "Scissors wins!"
-//        elsif hand1 == "scissors" && hand2 == "rock"
-//        return "Rock wins!"
-//        end
-//
-//        return "oops, looks like you didn't enter valid inputs!"
-//        end

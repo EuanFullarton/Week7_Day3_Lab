@@ -6,6 +6,17 @@ package example.codeclan.com.rockpaperscissors;
 
 public class Player {
 
-    public void playerChoice(String rock) {
+    private String choice;
+
+    public Player() {
+        choice = null;
+    }
+
+    public void playerChoice(String choice) {
+        this.choice = choice;
+    }
+
+    public String getPlayerChoice() {
+        return choice;
     }
 }

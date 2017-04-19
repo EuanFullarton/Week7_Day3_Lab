@@ -6,6 +6,18 @@ package example.codeclan.com.rockpaperscissors;
 
 public class Computer {
 
-    public void computerChoice(String scissors) {
+    private String choice;
+
+    public Computer() {
+    choice = null;
+    }
+
+    public void computerChoice(String choice) {
+        this.choice = choice;
+    }
+
+    public String getComputerChoice() {
+        return choice;
     }
 }
+

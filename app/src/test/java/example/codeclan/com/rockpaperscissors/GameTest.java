@@ -12,15 +12,33 @@ import static junit.framework.Assert.assertEquals;
 public class GameTest {
 
     @Before
-    Game game = new Game();
+    public void before() {
+        game = new Game(player, computer);
+    }
+
+
+    Game game;
     Player player = new Player();
     Computer computer = new Computer();
 
     @Test
-    public void testWin(){
+    public void testPlayerWin() {
         player.playerChoice("Rock");
         computer.computerChoice("Scissors");
-        assertEquals("Player1 wins", game.play());
+        assertEquals("Player wins!", game.play());
+    }
 
+    @Test
+    public void testDraw() {
+        player.playerChoice("Rock");
+        computer.computerChoice("Rock");
+        assertEquals("Draw!", game.play());
+    }
+
+    @Test
+    public void testComputerWin() {
+        player.playerChoice("Rock");
+        computer.computerChoice("Paper");
+        assertEquals("Computer wins!", game.play());
     }
 }
